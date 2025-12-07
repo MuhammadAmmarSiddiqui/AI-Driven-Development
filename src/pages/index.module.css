@@ -1,0 +1,113 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Modules section */
+.modules {
+  padding: 4rem 0;
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.modules h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.modulesDescription {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 1.2rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.modulesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.moduleCard {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.moduleCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  color: inherit;
+}
+
+.moduleIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.moduleCard h3 {
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary);
+}
+
+/* Highlights section */
+.highlights {
+  padding: 4rem 0;
+}
+
+.highlights h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.highlightsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.highlight {
+  text-align: center;
+  padding: 2rem;
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 8px;
+}
+
+.highlight h3 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+}
+
+/* Homepage Features */
+main > :last-child {
+  margin-top: 3rem;
+}

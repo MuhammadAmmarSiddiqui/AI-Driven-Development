@@ -1,0 +1,51 @@
+.keyConcept {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border-radius: var(--ifm-global-radius);
+  border-left: 4px solid;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.header h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.content {
+  padding-left: 1.7rem;
+}
+
+/* Info type */
+.info {
+  background-color: var(--ifm-color-info-background);
+  border-left-color: var(--ifm-color-info);
+}
+
+/* Warning type */
+.warning {
+  background-color: var(--ifm-color-warning-background);
+  border-left-color: var(--ifm-color-warning);
+}
+
+/* Tip type */
+.tip {
+  background-color: var(--ifm-color-success-background);
+  border-left-color: var(--ifm-color-success);
+}
+
+/* Important type */
+.important {
+  background-color: var(--ifm-color-danger-background);
+  border-left-color: var(--ifm-color-danger);
+}
