@@ -11,7 +11,6 @@ const config = {
   // Set the production url of your site here
   url: 'https://muhammadammarsiddiqui.github.io',
   // Set the /<base>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/AI-Driven-Development/',
 
   // GitHub pages deployment config.
@@ -21,9 +20,6 @@ const config = {
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -36,8 +32,6 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/your-username/your-project/tree/main/',
         },
@@ -48,10 +42,42 @@ const config = {
     ],
   ],
 
+  plugins: [
+    // 1. Plugin to handle URL redirects
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        /**
+         * @param {string} existingPath
+         */
+        createRedirects: function (existingPath) {
+          // Returning an empty array tells Docusaurus no redirects are needed for this path
+          // This fixes the "existingPath" type error and the undefined error.
+          return [];
+        },
+      },
+    ],
+    // 2. Custom plugin to inject the RAG Chatbot globally
+    async function ragChatbotPlugin(context, options) {
+      return {
+        name: 'rag-chatbot-plugin',
+        getClientModules() {
+          return [require.resolve('./src/components/RAGChatbot/RAGChatbotWrapper.js')];
+        },
+        injectHtmlTags() {
+          return {
+            postBodyTags: [
+              `<div id="rag-chatbot-root"></div>`,
+            ],
+          };
+        },
+      };
+    },
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
         title: 'Physical AI & Robotics',

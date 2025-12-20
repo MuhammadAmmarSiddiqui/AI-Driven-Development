@@ -20,7 +20,9 @@
   "license": "ISC",
   "dependencies": {
     "@docusaurus/core": "^3.9.2",
+    "@docusaurus/plugin-client-redirects": "^3.9.2",
     "@docusaurus/preset-classic": "^3.9.2",
-    "prism-react-renderer": "^2.4.1"
+    "prism-react-renderer": "^2.4.1",
+    "uuid": "^13.0.0"
   }
 }

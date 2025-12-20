@@ -67,7 +67,7 @@ nosetests.xml
 coverage.xml
 *.cover
 *.log
-.git
+.git/refs/replace/
 .pytest_cache/
 .hypothesis/
 
